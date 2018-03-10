@@ -14,13 +14,8 @@ public class JavauiApplication implements CommandLineRunner {
 	@Autowired
 	private ApplicationContext appContext;
 
-	@Autowired
-	private static InputNameForm inputNameForm;
-
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(JavauiApplication.class).headless(false).run(args);
-
-		java.awt.EventQueue.invokeLater(() -> inputNameForm.setVisible(true));
 	}
 
 	@Override
@@ -32,9 +27,7 @@ public class JavauiApplication implements CommandLineRunner {
 			System.out.println(bean);
 		}
 
+		java.awt.EventQueue.invokeLater(() -> appContext.getBean(InputNameForm.class).setVisible(true));
 	}
 
-	public void setInputNameForm(InputNameForm inputNameForm) {
-		this.inputNameForm = inputNameForm;
-	}
 }
