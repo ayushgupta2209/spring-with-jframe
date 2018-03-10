@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class JavauiApplication implements CommandLineRunner {
 
@@ -20,13 +18,6 @@ public class JavauiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		String[] beans = appContext.getBeanDefinitionNames();
-		Arrays.sort(beans);
-		for (String bean : beans) {
-			System.out.println(bean);
-		}
-
 		java.awt.EventQueue.invokeLater(() -> appContext.getBean(InputNameForm.class).setVisible(true));
 	}
 
