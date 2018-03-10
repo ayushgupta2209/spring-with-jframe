@@ -138,4 +138,9 @@ public class InputNameForm extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
+
+
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
+    }
 }

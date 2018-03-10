@@ -13,4 +13,8 @@ public class UserManager {
     userNameRepository.save(new UserName(firstName, lastName));
     System.out.println(userNameRepository.findAllByFirstName(firstName));
   }
+
+  public void setUserNameRepository(UserNameRepository userNameRepository) {
+    this.userNameRepository = userNameRepository;
+  }
 }
